@@ -1,4 +1,4 @@
-# signal-addon
+# nextcloud-addon
 [![Release](https://github.com/haberda/signal-addon/actions/workflows/image.yml/badge.svg)](https://github.com/haberda/signal-addon/actions/workflows/image.yml)
 
-Signal addon docker build files
+Nextcloud addon docker build files
