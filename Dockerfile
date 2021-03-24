@@ -1,19 +1,20 @@
-FROM bbernhard/signal-cli-rest-api:0.37
+FROM linuxserver/nextcloud:version-21.0.0
 
-LABEL io.hass.version="0.37.2" io.hass.type="addon" io.hass.arch="armhf|aarch64|amd64"
+LABEL io.hass.version="21.0.0" io.hass.type="addon" io.hass.arch="armhf|aarch64|amd64"
 
-COPY options.sh /options.sh
+ENV NEXTCLOUD_PATH="/data/config/www/nextcloud"
 
-RUN ["chmod", "+x", "/options.sh"]
+# modify/copy files
+RUN sed -i "s|data|share/nextcloud|g" /etc/cont-init.d/*
 
-RUN apt-get clean \
+RUN sed -i "s|config|data/config|g" /etc/cont-init.d/*
 
-        && apt-get update \
+RUN sed -i "s|data|share/nextcloud|g" /etc/services.d/nginx/*
 
-        && apt-get install -y --no-install-recommends jq
+RUN sed -i "s|config|data/config|g" /etc/services.d/nginx/*
 
-WORKDIR /data/data/
+COPY root/ /
 
-ENTRYPOINT ["/options.sh"]
+RUN ["chmod", "+x", "/defaults/nextcloud-perms.sh"]
 
-VOLUME ["/data"]
+VOLUME ["/share", "/ssl", "/data", "/media"]
