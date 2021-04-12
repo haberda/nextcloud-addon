@@ -1,6 +1,6 @@
-FROM linuxserver/nextcloud:version-21.0.0
+FROM linuxserver/nextcloud:version-21.0.1
 
-LABEL io.hass.version="21.0.0.1" io.hass.type="addon" io.hass.arch="armhf|aarch64|amd64"
+LABEL io.hass.version="21.0.1" io.hass.type="addon" io.hass.arch="armhf|aarch64|amd64"
 
 ENV NEXTCLOUD_PATH="/data/config/www/nextcloud"
 
