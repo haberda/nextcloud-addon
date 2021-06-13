@@ -18,11 +18,11 @@
   ],
   "ports": {
     "443/tcp": 8099,
-	"80/tcp": null
+    "80/tcp": null
   },
   "ports_description": {
     "443/tcp": "https port",
-	"80/tcp": "http port"
+    "80/tcp": "http port"
   },
   "webui": "https://[HOST]:[PORT:443]",
   "panel_icon": "mdi:cloud",
