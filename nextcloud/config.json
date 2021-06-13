@@ -23,7 +23,7 @@
   "ports_description": {
     "443/tcp": "https port",
 	"80/tcp": "http port"
-  }
+  },
   "webui": "https://[HOST]:[PORT:443]",
   "panel_icon": "mdi:cloud",
   "snapshot_exclude":["*/nextcloud/log/"],
