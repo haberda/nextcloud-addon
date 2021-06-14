@@ -1,5 +1,5 @@
 {
-  "name": "Nextcloud",
+  "name": "Nextcloud for Home Assistant",
   "url": "https://github.com/haberda/hassio_addons/tree/master/nextcloud",
   "version": "dev",
   "slug": "nextcloud",
