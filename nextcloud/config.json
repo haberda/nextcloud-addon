@@ -26,6 +26,6 @@
   },
   "webui": "https://[HOST]:[PORT:443]",
   "panel_icon": "mdi:cloud",
-  "snapshot_exclude":["*/nextcloud/log/"],
+  "backup_exclude":["*/nextcloud/log/"],
   "image": "ghcr.io/haberda/nextcloud/{arch}"
 }
