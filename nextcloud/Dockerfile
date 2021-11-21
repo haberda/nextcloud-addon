@@ -1,4 +1,4 @@
-ARG BUILD_FROM=linuxserver/nextcloud:version-22.2.0
+ARG BUILD_FROM=linuxserver/nextcloud:version-22.2.3
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -15,6 +15,8 @@ RUN sed -i "s|data|share/nextcloud|g" /etc/services.d/nginx/*
 RUN sed -i "s|config|data/config|g" /etc/services.d/nginx/*
 
 COPY root/ /
+
+RUN sed -i "s|memory_limit=512M|memory_limit=-1|g" /etc/php7/php.ini
 
 RUN ["chmod", "+x", "/defaults/nextcloud-perms.sh"]
 
