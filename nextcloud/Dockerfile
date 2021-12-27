@@ -1,4 +1,4 @@
-ARG BUILD_FROM=linuxserver/nextcloud:version-22.2.3
+ARG BUILD_FROM=linuxserver/nextcloud:version-23.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
