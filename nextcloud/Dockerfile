@@ -1,7 +1,6 @@
-ARG BUILD_FROM=linuxserver/nextcloud:version-23.0.0
+ARG BUILD_FROM=lscr.io/linuxserver/nextcloud:23.0.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
-
 
 ENV NEXTCLOUD_PATH="/data/config/www/nextcloud"
 
