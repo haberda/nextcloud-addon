@@ -1,7 +1,7 @@
 {
   "build_from": {
-    "aarch64": "lscr.io/linuxserver/nextcloud:24.0.1",
-    "amd64": "lscr.io/linuxserver/nextcloud:24.0.1",
-    "armv7": "lscr.io/linuxserver/nextcloud:24.0.1"
+    "aarch64": "ghcr.io/linuxserver/nextcloud:24.0.1-ls188@sha256:f179bc83a9cb994d0f0e44f9b84dac278ec72ceb225e390c7ece932bd28c5fcf",
+    "amd64": "ghcr.io/linuxserver/nextcloud:24.0.1-ls188@sha256:0a57c870af6673e623da91cd212b13980ca8f9cea4cd7e0e450fde3f5ac97d2a",
+    "armv7": "ghcr.io/linuxserver/nextcloud:24.0.1-ls188@sha256:4f3e3ded2788ff9a684c926470a221e651741fa9d111df3c31a930971f35edee"
   }
 }
