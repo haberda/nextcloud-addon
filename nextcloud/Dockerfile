@@ -15,7 +15,7 @@ RUN sed -i "s|config|data/config|g" /etc/services.d/nginx/*
 
 COPY root/ /
 
-RUN sed -i "s|memory_limit=512M|memory_limit=-1|g" /etc/php7/php.ini
+#RUN sed -i "s|memory_limit=512M|memory_limit=-1|g" /etc/php7/php.ini
 
 RUN ["chmod", "+x", "/defaults/nextcloud-perms.sh"]
 
