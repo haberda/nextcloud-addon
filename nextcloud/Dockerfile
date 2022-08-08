@@ -1,21 +1,12 @@
-ARG BUILD_FROM=lscr.io/linuxserver/nextcloud:24.0.1
+ARG BUILD_FROM=lscr.io/linuxserver/nextcloud:24.0.3-php8
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
-ENV NEXTCLOUD_PATH="/data/config/www/nextcloud"
-
 # modify/copy files
-RUN sed -i "s|data|share/nextcloud|g" /etc/cont-init.d/*
 
-RUN sed -i "s|config|data/config|g" /etc/cont-init.d/*
+COPY run.sh /etc/cont-init.d/03-hassio
 
-RUN sed -i "s|data|share/nextcloud|g" /etc/services.d/nginx/*
-
-RUN sed -i "s|config|data/config|g" /etc/services.d/nginx/*
-
-COPY root/ /
-
-#RUN sed -i "s|memory_limit=512M|memory_limit=-1|g" /etc/php7/php.ini
+RUN ["chmod", "+x", "/etc/cont-init.d/03-hassio"]
 
 RUN ["chmod", "+x", "/defaults/nextcloud-perms.sh"]
 
