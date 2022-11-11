@@ -1,4 +1,4 @@
-ARG BUILD_FROM=lscr.io/linuxserver/nextcloud:24.0.3-php8
+ARG BUILD_FROM=lscr.io/linuxserver/nextcloud:25.0.1-php8
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
