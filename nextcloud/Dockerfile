@@ -15,7 +15,7 @@ RUN ["chmod", "+x", "/defaults/nextcloud-perms.sh"]
 #	-e 's/upload_max_filesize=1024M/upload_max_filesize=10240M/g' \
 #	-e 's/post_max_size=1024M/post_max_size=10240M/g' \
 #    	/etc/php8/php.ini
-#RUN sed -i "s|client_max_body_size 512M;|client_max_body_size 10240M;|g" /defaults/default
+RUN sed -i "s|client_max_body_size 512M;|client_max_body_size 10240M;|g" /defaults/nginx/site-confs/default.conf.sample
 
 VOLUME ["/share", "/ssl", "/data", "/media"]
 
