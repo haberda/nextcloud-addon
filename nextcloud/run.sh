@@ -7,3 +7,4 @@ mkdir -p /ssl/nextcloud/keys
 rm -r /data/config/keys
 ln -sf /ssl/nextcloud/keys /data/config/
 rm -r /data/config/nginx
+chown -R abc:abc /data/config
