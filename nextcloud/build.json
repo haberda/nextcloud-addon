@@ -1,7 +1,7 @@
 {
   "build_from": {
-    "aarch64": "linuxserver/nextcloud:25.0.2",
-    "amd64": "linuxserver/nextcloud:25.0.2",
-    "armv7": "linuxserver/nextcloud:25.0.2"
+    "aarch64": "linuxserver/nextcloud:25.0.3",
+    "amd64": "linuxserver/nextcloud:25.0.3",
+    "armv7": "linuxserver/nextcloud:25.0.3"
   }
 }
