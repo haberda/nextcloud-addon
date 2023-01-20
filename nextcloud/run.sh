@@ -8,3 +8,4 @@ rm -r /data/config/keys
 ln -sf /ssl/nextcloud/keys /data/config/
 rm -r /data/config/nginx
 chown -R abc:abc /data/config
+alias php7=php
