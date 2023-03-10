@@ -8,7 +8,7 @@ COPY run.sh /etc/cont-init.d/03-hassio
 
 RUN ["chmod", "+x", "/etc/cont-init.d/03-hassio"]
 
-RUN ["chmod", "+x", "/defaults/nextcloud-perms.sh"]
+# RUN ["chmod", "+x", "/defaults/nextcloud-perms.sh"]
 
 # Increase max file upload size
 #RUN sed -i \
