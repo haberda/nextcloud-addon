@@ -15,6 +15,12 @@ RUN ["chmod", "+x", "/etc/cont-init.d/03-hassio"]
 #	-e 's/upload_max_filesize=1024M/upload_max_filesize=10240M/g' \
 #	-e 's/post_max_size=1024M/post_max_size=10240M/g' \
 #    	/etc/php8/php.ini
+
+# Corrects permissions for s6 v3
+RUN if [ -d /etc/cont-init.d ]; then chmod -R 755 /etc/cont-init.d; fi && \
+    if [ -d /etc/services.d ]; then chmod -R 755 /etc/services.d; fi && \
+    if [ -f /entrypoint.sh ]; then chmod 755 /entrypoint.sh; fi
+
 RUN sed -i "s|client_max_body_size 512M;|client_max_body_size 10240M;|g" /defaults/nginx/site-confs/default.conf.sample
 
 VOLUME ["/share", "/ssl", "/data", "/media"]
