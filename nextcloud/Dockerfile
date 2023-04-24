@@ -57,6 +57,10 @@ RUN \
     # Replace lsiown if not found
     && if [ ! -f /usr/bin/lsiown ]; then for file in $(grep -sril "lsiown" /etc); do sed -i "s|lsiown|chown|g" $file; done; fi
 
+# Fix issue where recursive sed does too much
+RUN \
+    sed -i 's|/data/config/www/nextcloud/data/config/config.php|/data/config/www/nextcloud/config/config.php|g' /etc/s6-overlay/s6-rc.d/init-nextcloud-config/run
+
 # Add rootfs
 COPY rootfs/ /
 
