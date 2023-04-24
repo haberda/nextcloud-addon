@@ -25,4 +25,3 @@ backup_exclude: ["*/nextcloud/log/"]
 privileged: [SYS_ADMIN]
 init: false
 image: ghcr.io/haberda/nextcloud/{arch}
-

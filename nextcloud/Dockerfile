@@ -1,12 +1,6 @@
-ARG BUILD_FROM=lscr.io/linuxserver/nextcloud:25.0.4
+ARG BUILD_FROM=lscr.io/linuxserver/nextcloud:26.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
-
-# modify/copy files
-
-#COPY run.sh /etc/cont-init.d/03-hassio
-
-#RUN ["chmod", "+x", "/etc/cont-init.d/03-hassio"]
 
 # Set S6 wait time
 ENV S6_CMD_WAIT_FOR_SERVICES=1 \
@@ -63,12 +57,13 @@ RUN \
     # Replace lsiown if not found
     && if [ ! -f /usr/bin/lsiown ]; then for file in $(grep -sril "lsiown" /etc); do sed -i "s|lsiown|chown|g" $file; done; fi
 
+# Add rootfs
+COPY rootfs/ /
+
 # Corrects permissions for s6 v3
 RUN if [ -d /etc/cont-init.d ]; then chmod -R 755 /etc/cont-init.d; fi && \
     if [ -d /etc/services.d ]; then chmod -R 755 /etc/services.d; fi && \
     if [ -f /entrypoint.sh ]; then chmod 755 /entrypoint.sh; fi
-
-#RUN sed -i "s|client_max_body_size 512M;|client_max_body_size 10240M;|g" /defaults/nginx/site-confs/default.conf.sample
 
 VOLUME ["/share", "/ssl", "/data", "/media"]
 
