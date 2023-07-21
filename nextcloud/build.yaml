@@ -1,4 +1,4 @@
 build_from:
-  aarch64: lscr.io/linuxserver/nextcloud:27.0.1
-  amd64: lscr.io/linuxserver/nextcloud:27.0.1
-  armv7: lscr.io/linuxserver/nextcloud:27.0.1
+  aarch64: lscr.io/linuxserver/nextcloud:27.0.0
+  amd64: lscr.io/linuxserver/nextcloud:27.0.0
+  armv7: lscr.io/linuxserver/nextcloud:27.0.0
